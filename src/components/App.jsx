@@ -5,11 +5,11 @@ const MoviesDetails = lazy(() =>
   import('./pages/MoviesDetails/MoviesDetails.jsx')
 );
 const Movies = lazy(() => import('../pages/Movies.jsx'));
-const Reviews = lazy(() => import('../components/Reviews/Reviews.jsx'));
-const Cast = lazy(() => import('../components/Cast/Cast.jsx'));
-const NotFound = lazy(() => import('../components/NotFound/NotFound.jsx'));
-const Layout = lazy(() => import('../components/Layout/Layout.jsx'));
-const App = () => {
+const Reviews = lazy(() => import('./Reviews/Reviews.jsx'));
+const Cast = lazy(() => import('./Cast/Cast.jsx'));
+const NotFound = lazy(() => import('./NotFound/NotFound.jsx'));
+const Layout = lazy(() => import('./Layout/Layout.jsx'));
+export const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
@@ -24,4 +24,3 @@ const App = () => {
     </Routes>
   );
 };
-export default App;

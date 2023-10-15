@@ -23,9 +23,7 @@ const SearchBox = ({ handleSubmit }) => {
         />
         <button type="submit" className="button">
           Search video
-          {/* <ButtonLabel className="button-label"></ButtonLabel> */}
         </button>
-
         <ErrorMessage name="searchImg" component="div" />
       </FormikForm>
     </Formik>

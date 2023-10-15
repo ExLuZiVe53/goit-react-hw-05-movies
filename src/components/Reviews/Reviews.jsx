@@ -1,4 +1,4 @@
-import { fetchReviewById } from 'components/Api';
+import { fetchReviewById } from '../Api/Api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 

@@ -1,8 +1,8 @@
 // import { FilmCard } from 'components/FilmCard/FilmCard';
 import React, { Suspense, useRef } from 'react';
-import { Outlet, useLocation, useParams } from 'react-router-dom';
+import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
 import { Link } from '../../App.styled.js';
-import { fetchMovieInfoById } from '../../Api.js';
+import { fetchMovieInfoById } from '../../components/Api/Api.js';
 import { useEffect, useState } from 'react';
 import { BackLink } from 'components/BackLink.jsx';
 
@@ -79,9 +79,9 @@ const MoviesDetails = () => {
               // color: '#010101',
             }}
           >
-            <Link to="cast" cast={credits}>
+            <NavLink to="cast" cast={credits}>
               Cast
-            </Link>
+            </NavLink>
           </li>
           <li>
             <Link to="reviews">Reviews</Link>

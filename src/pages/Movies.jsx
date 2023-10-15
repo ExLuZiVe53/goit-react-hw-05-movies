@@ -1,12 +1,12 @@
-// import { ProductList } from '../components/ProductList';
-// import { getMovies } from '../fakeAPI';
-import { Outlet, useLocation, useSearchParams } from 'react-router-dom';
-import { Link } from '../App.styled.js';
-// import MoviesDetails from '../MoviesDetails/MoviesDetails.jsx';
+import {
+  NavLink,
+  Outlet,
+  useLocation,
+  useSearchParams,
+} from 'react-router-dom';
+import SearchBox from '../components/SearchBox/SearchBox';
 
-import SearchBox from '../SearchBox/SearchBox.jsx';
-// import { MovieList } from 'components/MovieList/MovieList.jsx';
-import { fetchQueryMovie } from 'components/Api.js';
+import { fetchQueryMovie } from '../components/Api/Api.js';
 import { Suspense, useEffect, useState } from 'react';
 
 const Movies = () => {
@@ -17,10 +17,6 @@ const Movies = () => {
   useEffect(() => {
     let abortCTRL = new AbortController();
     const fetchData = async () => {
-      //
-      // if (searchImg === '' && page === 1) {
-      //   return;
-      // }
       try {
         // ініціалізація абортконтролера
         if (abortCTRL.current) {
@@ -50,17 +46,8 @@ const Movies = () => {
     setSearchParams({ query: input });
   };
 
-  //   const movieName = searchParams.get('name') ?? '';
-
-  //   const visibleMovies = movieListQuery.filter(movie =>
-  //       movie.name.toLowerCase().includes(movieName.toLowerCase())
-  //     );
-
   const location = useLocation();
-  //   const updateQueryString = (name) => {
-  //     const nextParams = name !== "" ? { name } : {};
-  //     setSearchParams(nextParams);
-  //   };  movieListQuery
+
   return (
     <div>
       Movies
@@ -69,9 +56,9 @@ const Movies = () => {
         <ul>
           {movieListQuery.map(film => (
             <li key={film.id}>
-              <Link to={`${film.id}`} state={{ from: location }}>
+              <NavLink to={`${film.id}`} state={{ from: location }}>
                 {film.title}
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
@@ -80,13 +67,6 @@ const Movies = () => {
         <Outlet />
       </Suspense>
     </div>
-    // <main>
-
-    //   {/* <MoviesList products={products} /> */}
-    //
-    //   {/* <MoviesDetails /> */}
-
-    // </main>
   );
 };
 export default Movies;
