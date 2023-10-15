@@ -4,7 +4,7 @@ const Home = lazy(() => import('./pages/Home.jsx'));
 const MoviesDetails = lazy(() =>
   import('./pages/MoviesDetails/MoviesDetails.jsx')
 );
-const Movies = lazy(() => import('./pages/Movies.jsx'));
+const Movies = lazy(() => import('../pages/Movies.jsx'));
 const Reviews = lazy(() => import('../components/Reviews/Reviews.jsx'));
 const Cast = lazy(() => import('../components/Cast/Cast.jsx'));
 const NotFound = lazy(() => import('../components/NotFound/NotFound.jsx'));
