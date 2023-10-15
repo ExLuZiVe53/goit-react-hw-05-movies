@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, FormikForm, FormikField, ErrorMessage } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 const initialValues = { query: '' };
 const SearchBox = ({ handleSubmit }) => {
@@ -12,8 +12,8 @@ const SearchBox = ({ handleSubmit }) => {
 
   return (
     <Formik initialValues={initialValues}>
-      <FormikForm onSubmit={onSubmit} className="form">
-        <FormikField
+      <Form onSubmit={onSubmit} className="form">
+        <Field
           className="input"
           name="query"
           type="text"
@@ -25,7 +25,7 @@ const SearchBox = ({ handleSubmit }) => {
           Search video
         </button>
         <ErrorMessage name="searchImg" component="div" />
-      </FormikForm>
+      </Form>
     </Formik>
   );
 };
