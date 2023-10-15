@@ -1,10 +1,10 @@
 // import { FilmCard } from 'components/FilmCard/FilmCard';
 import React, { Suspense, useRef } from 'react';
 import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
-import { Link } from '../../App.styled.js';
+
 import { fetchMovieInfoById } from '../../components/Api/Api.js';
 import { useEffect, useState } from 'react';
-import { BackLink } from 'components/BackLink.jsx';
+import { BackLink } from '../../components/BackLink/BackLink.jsx';
 
 const MoviesDetails = () => {
   const { id } = useParams();
@@ -84,7 +84,7 @@ const MoviesDetails = () => {
             </NavLink>
           </li>
           <li>
-            <Link to="reviews">Reviews</Link>
+            <NavLink to="reviews">Reviews</NavLink>
           </li>
         </ul>
         <Suspense fallback={<div>Loading...</div>}>
